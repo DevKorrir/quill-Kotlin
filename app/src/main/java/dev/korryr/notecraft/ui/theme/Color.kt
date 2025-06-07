@@ -13,7 +13,7 @@ val camel04 = Color(238, 215, 187)  // Very light camel for backgrounds
 val camel05 = Color(139, 106, 67)   // Deep camel for accents
 
 // Navy Blue Variations
-val navy01 = Color(27, 41, 81)      // Main navy
+val navy01 = Color(25, 42, 86)      // Main navy
 val navy02 = Color(45, 66, 115)     // Lighter navy
 val navy03 = Color(15, 25, 51)      // Darker navy
 val navy04 = Color(85, 105, 145)    // Muted navy
