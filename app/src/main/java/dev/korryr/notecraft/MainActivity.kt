@@ -1,5 +1,7 @@
 package dev.korryr.notecraft
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -24,8 +26,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.compose.viewModel
+import dev.korryr.notecraft.ui.components.splash.presentation.MinimalSplashScreen
+import dev.korryr.notecraft.ui.components.splash.view.SplashScreen
 import dev.korryr.notecraft.ui.theme.NoteCraftTheme
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,12 +48,34 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .fillMaxSize()
                 ) { innerPadding ->
+                    //SplashScreen()
                     MainContent(
                         themeManager = themeManager,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
+        }
+    }
+}
+
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        setContent {
+            NoteCraftTheme {
+                MinimalSplashScreen()
+            }
+        }
+
+        // Navigate to MainActivity after 3 seconds
+        lifecycleScope.launch {
+            delay(3000)
+            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+            finish()
         }
     }
 }
