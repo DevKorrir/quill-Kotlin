@@ -67,7 +67,7 @@ class SplashActivity : ComponentActivity() {
 
         setContent {
             NoteCraftTheme {
-                MinimalSplashScreen()
+                SplashScreen()
             }
         }
 
