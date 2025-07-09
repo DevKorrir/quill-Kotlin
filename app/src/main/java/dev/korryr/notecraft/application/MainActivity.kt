@@ -1,4 +1,4 @@
-package dev.korryr.notecraft
+package dev.korryr.notecraft.application
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.korryr.notecraft.ui.components.splash.presentation.MinimalSplashScreen
+import dev.korryr.notecraft.ui.components.home.view.HomePage
 import dev.korryr.notecraft.ui.components.splash.view.SplashScreen
 import dev.korryr.notecraft.ui.theme.NoteCraftTheme
 import kotlinx.coroutines.delay
@@ -39,22 +39,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val themeManager: ThemeManager = viewModel()
 
-            NoteCraftTheme (
-                darkTheme = themeManager.isDarkMode
-            ){
-                Scaffold(
-                    modifier = Modifier
-                        .fillMaxSize()
-                ) { innerPadding ->
-                    //SplashScreen()
-                    MainContent(
-                        themeManager = themeManager,
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            ContentCollection(
+                navigationSubGraphs = navigationSubGraphs,
+                navController,
+            )
+
         }
     }
 }

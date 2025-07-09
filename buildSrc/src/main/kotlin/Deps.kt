@@ -1,24 +1,86 @@
 
 
-object Deps {
+object Dependencies {
+    // Android Core
+    const val coreKtx = "androidx.core:core-ktx:1.12.0"
+    const val appCompat = "androidx.appcompat:appcompat:1.6.1"
+    const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.8.7"
+    const val activityCompose = "androidx.activity:activity-compose:1.9.3"
+
     // Compose
-    const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
-    const val composeMaterial = "androidx.compose.material3:material3:${Versions.compose}"
-    const val composePreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
-    const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
+    const val composeBom = "androidx.compose:compose-bom:2024.04.01"
+    const val composeUi = "androidx.compose.ui:ui"
+    const val composeUiGraphics = "androidx.compose.ui:ui-graphics"
+    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview"
+    const val composeMaterial3 = "androidx.compose.material3:material3"
+    const val composeUiTextAndroid = "androidx.compose.ui:ui-text-android"
+    const val composeUiTooling = "androidx.compose.ui:ui-tooling"
+    const val composeTestManifest = "androidx.compose.ui:ui-test-manifest"
 
-    // Firebase
-    const val firebaseAuth = "com.google.firebase:firebase-auth:${Versions.firebaseAuth}"
-    const val firebaseFirestore = "com.google.firebase:firebase-firestore:${Versions.firebaseFirestore}"
+    // Hilt
+    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val hiltAgp = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
+    const val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationCompose}"
+    const val hiltWorker = "androidx.hilt:hilt-work:${Versions.hiltNavigationCompose}"
 
-    // DI
-    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
-    const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    // Navigation
+    const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.composeNav}"
 
-    // Accompanist (for system UI, permissions)
-    const val accompanistPermissions = "com.google.accompanist:accompanist-permissions:${Versions.accompanist}"
+    // Layouts
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.2.0"
+    const val composeConstraint = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
 
-    // Lifecycle
-    const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
-    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.lifecycle}"
+    // DataStore
+    const val datastorePrefs = "androidx.datastore:datastore-preferences:1.0.0"
+    const val cryptoDatastore = "androidx.security:security-crypto:1.1.0-alpha06"
+
+    // Room
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
+
+    // Icons & UI Components
+    const val extendedIcons = "androidx.compose.material:material-icons-extended:1.7.7"
+    const val materialIconsCore = "androidx.compose.material:material-icons-core:1.2.0"
+    const val materialIconsExtended = "androidx.compose.material:material-icons-extended:1.2.0"
+
+    // Background processing
+    const val work = "androidx.work:work-runtime-ktx:${Versions.workRuntimeKtx}"
+
+    // Logging
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+
+    // Images
+    const val coilCompose = "io.coil-kt.coil3:coil-compose:3.1.0"
+    const val coilNetwork = "io.coil-kt.coil3:coil-network-okhttp:3.1.0"
+    const val lottieCompose = "com.airbnb.android:lottie-compose:5.0.3"
+
+    // Paging
+    const val pagingRuntime = "androidx.paging:paging-runtime-ktx:3.1.1"
+    const val pagingCompose = "androidx.paging:paging-compose:1.0.0-alpha18"
+
+    // Networking
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val okhttpLogger = "com.squareup.okhttp3:logging-interceptor:4.12.0"
+    const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.converterGson}"
+    const val retrofit2Converter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.retrofit2KotlinxSerializationConverter}"
+
+    // Serialization
+    const val kotlinxSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinXSerialization}"
+    const val kotlinxDatetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.6.2"
+
+    // Accompanist
+    const val systemUi = "com.google.accompanist:accompanist-systemuicontroller:0.24.10-beta"
+
+    const val customTabs = "androidx.browser:browser:1.7.0"
+    const val openId = "net.openid:appauth:0.11.1"
+
+    // Testing
+    const val junit = "junit:junit:${Versions.junit}"
+    const val androidXJunit = "androidx.test.ext:junit:${Versions.androidXJunit}"
+    const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+    const val roboelectric = "org.robolectric:robolectric:4.11.1"
+    const val mockk = "io.mockk:mockk:1.13.8"
+    const val workTest = "androidx.work:work-testing:2.9.0"
 }
