@@ -22,3 +22,8 @@ dependencyResolutionManagement {
 rootProject.name = "NoteCraft"
 include(":app")
 include(":features")
+include(":navigation")
+include(":features:home")
+include(":domain")
+include(":core")
+include(":commonUi")
